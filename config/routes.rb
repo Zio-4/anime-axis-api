@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   resources :comments
+
   resources :forum_posts
+  get "/forum_posts/anime", to: "forum_posts#anime_forum_posts"
+  get "/forum_posts/manga", to: "forum_posts#manga_forum_posts"
+  get "/forum_posts/general", to: "forum_posts#general_forum_posts"
+
   resources :forums
   resources :manga_lists
   resources :anime_lists

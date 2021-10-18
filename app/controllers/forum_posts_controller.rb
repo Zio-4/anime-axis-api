@@ -1,7 +1,26 @@
 class ForumPostsController < ApplicationController
+    skip_before_action :authorize, only: [:anime_forum_posts, :manga_forum_posts, :general_forum_posts]
+
     def create
        forum_post = ForumPost.create!(forum_post_params)
        render json: forum_post, status: :created
+    end
+
+    # Create custom methods for forum posts of each of forum (Anime, Manga, General) for easier rendering on front end
+
+    def anime_forum_posts
+        posts = ForumPost.where("forum_id = 1").limit(5)
+        render json: posts
+    end
+
+    def manga_forum_posts
+        posts = ForumPost.where("forum_id = 2").limit(5)
+        render json: posts
+    end
+
+    def general_forum_posts
+        posts = ForumPost.where("forum_id = 3").limit(5)
+        render json: posts
     end
 
     private
