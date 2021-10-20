@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_182157) do
   end
 
   create_table "forum_posts", force: :cascade do |t|
-    t.bigint "forum_id", null: false
+    t.bigint "forum_id"
     t.bigint "user_id", null: false
     t.bigint "anime_id"
     t.bigint "manga_id"
