@@ -6,18 +6,7 @@ class ForumPostsController < ApplicationController
        render json: forum_post, status: :created
     end
 
-
     # Create custom methods for forum posts of each of forum (Anime, Manga, General) for easier rendering on front end
-
-    def anime_discussion_posts
-        posts = ForumPost.where("anime_id = params[:id]").limit(20)
-        render json: posts
-    end
-
-    def manga_discussion_posts
-        posts = ForumPost.where("manga_id = params[:id]").limit(20)
-        render json: posts
-    end
 
     def anime_forum_posts
         posts = ForumPost.where("forum_id = 1").limit(20)
