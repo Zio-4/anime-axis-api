@@ -10,7 +10,7 @@ class ForumPostsController < ApplicationController
 
     def anime_forum_posts
         posts = ForumPost.where("forum_id = 1").limit(20)
-        render json: posts
+        render json: posts, include: :comments
     end
 
     def manga_forum_posts

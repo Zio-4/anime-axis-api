@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_182157) do
   enable_extension "plpgsql"
 
   create_table "anime_lists", force: :cascade do |t|
-    t.bigint "anime_id", null: false
+    t.bigint "anime_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_182157) do
   end
 
   create_table "manga_lists", force: :cascade do |t|
-    t.bigint "manga_id", null: false
+    t.bigint "manga_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
