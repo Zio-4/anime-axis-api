@@ -9,17 +9,17 @@ class ForumPostsController < ApplicationController
     # Create custom methods for forum posts of each of forum (Anime, Manga, General) for easier rendering on front end
 
     def anime_forum_posts
-        posts = ForumPost.where("forum_id = 1").limit(20)
-        render json: posts, include: [:comment, :user]
+        posts = ForumPost.where("forum_id = 1").order('created_at desc').limit(20)
+        render json: posts, include: [:user]
     end
 
     def manga_forum_posts
-        posts = ForumPost.where("forum_id = 2").limit(20)
+        posts = ForumPost.where("forum_id = 2").order('created_at desc').limit(20)
         render json: posts
     end
 
     def general_forum_posts
-        posts = ForumPost.where("forum_id = 3").limit(20)
+        posts = ForumPost.where("forum_id = 3").order('created_at desc').limit(20)
         render json: posts
     end
 
