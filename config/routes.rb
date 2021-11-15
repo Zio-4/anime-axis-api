@@ -6,9 +6,6 @@ Rails.application.routes.draw do
   get "/forum_posts/general", to: "forum_posts#general_forum_posts"
   resources :forum_posts, only: [:create, :show]
 
-  resources :forums
-  resources :manga_lists
-  resources :anime_lists
   resources :mangas
   resources :animes
   resources :users

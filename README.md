@@ -1,24 +1,40 @@
-# README
+# Anime Axis
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Anime Axis is anime and manga database and forum to learn all about your favorite stories and discuss them with others. 
 
-Things you may want to cover:
+## Install your own copy
 
-* Ruby version
+Fork and clone this repository.
 
-* System dependencies
+Then cd into the project directory and run: 
+```sh
+bundle install
+rails s
+```
 
-* Configuration
+## Environment Setup
 
-* Database creation
+Verify which version of Ruby you're running by entering this in the terminal:
 
-* Database initialization
+```sh
+ruby -v
+```
 
-* How to run the test suite
+Make sure you are running a recent version of ruby.
 
-* Services (job queues, cache servers, search engines, etc.)
+You can use `rvm` to install a newer version of Ruby:
 
-* Deployment instructions
+```sh
+rvm install 2.7.4 --default
+```
 
-* ...
+You should also install the latest versions of `bundler` and `rails`:
+
+```sh
+gem install bundler
+gem install rails
+```
+
+## Environment Setup
+
+### This Repository contains the backend for Anime Axis. You will also need to install a copy of the frontend for this app to work. [The frontend can be found here.](https://github.com/Zio-4/anime-axis-frontend)

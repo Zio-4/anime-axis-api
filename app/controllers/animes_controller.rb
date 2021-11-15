@@ -8,7 +8,6 @@ class AnimesController < ApplicationController
             # If an anime already exists in the anime table but not in the users list, add it to their list
             @current_user.animes << Anime.find_by(id: params[:id])
             render json: {message: "Anime has been added to your list"}
-            #{ |a| a.id == params[:id]}
         else
             # If an anime is not in the anime table, create it and add it to the users anime list 
             anime = Anime.create!(anime_params)
