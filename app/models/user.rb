@@ -7,8 +7,5 @@ class User < ApplicationRecord
 
     validates :username, presence: true, confirmation: {case_sensitive: false}, uniqueness: true, length: {in: 6..30}
     validates :password, presence: true, confirmation: true
-    # validates :password_must_match
 
-    # def password_must_match
-    #     errors.add(:password, "Password and Password Confirmation must match") unless password.match(password_confirmation) 
-    # end
+end
