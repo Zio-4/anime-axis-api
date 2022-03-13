@@ -82,5 +82,6 @@ test:
 production:
   <<: *default
   database: anime_axis_api_production
+  adapter: 'postgresql'
   username: anime_axis_api
   password: <%= ENV['ANIME_AXIS_API_DATABASE_PASSWORD'] %>
