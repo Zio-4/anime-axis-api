@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   get "/user", to: "users#show"
   delete "/logout", to: "sessions#destroy"
   post "/signup", to: "users#create"
-  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+  
+  if Rails.env == "production"
+      get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+        !request.xhr? && request.format.html?
+      end
+  end
 end
 
