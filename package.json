@@ -1,0 +1,7 @@
+{
+    "name": "anime-axis-api",
+    "engines": {
+      "node": "16.13.0",
+      "npm": "8.4.1"
+    }
+}
