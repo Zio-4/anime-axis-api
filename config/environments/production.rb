@@ -111,18 +111,4 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  config.middleware.insert_before 0, Rack::Cors do
-    allow do
-        origins 'https://anime-axis-api.herokuapp.com'
-        resource '*',
-            headers: :any,
-            methods: %i[get post put patch delete options head],
-            credentials: true
-    end
-  end
-
-  config.session_store :cookie_store, key: '_session_id', same_site: :strict, secure: true, domain: 'anime-axis-api.herokuapp.com'
-  config.middleware.use ActionDispatch::Cookies
-  config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
-  config.middleware.insert_after(ActionDispatch::Cookies, ActionDispatch::Session::CookieStore)
 end
