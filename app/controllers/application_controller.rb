@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
 
-
     def fallback_index_html
         if Rails.env == "production"
             render file: 'public/index.html'
