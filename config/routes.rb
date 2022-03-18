@@ -10,18 +10,20 @@ Rails.application.routes.draw do
 
     resources :mangas
     resources :animes
-    resources :users
+
   end
+
+  resources :users
 
   post "/login", to: "sessions#create"
   get "/user", to: "users#show"
   delete "/logout", to: "sessions#destroy"
   post "/signup", to: "users#create"
   
-  if Rails.env == "production"
-      get '*path', to: "application#fallback_index_html", constraints: ->(request) do
-        !request.xhr? && request.format.html?
-      end
-  end
+  # if Rails.env == "production"
+  #     get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+  #       !request.xhr? && request.format.html?
+  #     end
+  # end
 end
 
