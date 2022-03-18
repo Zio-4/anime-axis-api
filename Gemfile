@@ -42,3 +42,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Serializes which attributes will be passed to the frontend
 gem 'active_model_serializers'
+gem 'rails_same_site_cookie', '~> 0.1.9'
