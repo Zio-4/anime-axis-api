@@ -12,9 +12,19 @@ class UsersController < ApplicationController
         render json: @current_user, include: :animes
     end
 
+    # def update
+    #     user = User.find_by(id: params[:id])
+    #     if user.update(user_params)
+    #         render json: user, status: :ok
+    #     else
+    #         render json: user.errors, status: :unprocessable_entity
+    #     end
+    # end
+
     def update
         user = User.find_by(id: params[:id])
-        if user.update(user_params)
+        if user
+            user.update(user_params)
             render json: user, status: :ok
         else
             render json: user.errors, status: :unprocessable_entity
