@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     # end
 
     def update
-        @current_user.update!(user_params)
+        @current_user.update(user_params)
         render json: user, status: :ok
     end
 
