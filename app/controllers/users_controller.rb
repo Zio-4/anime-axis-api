@@ -24,8 +24,7 @@ class UsersController < ApplicationController
     def update
         user = User.find_by(id: params[:id])
         if user
-            # Adding exception raising
-            user.update!(user_params)
+            user.update(user_params)
             render json: user, status: :ok
         else
             render json: user.errors, status: :unprocessable_entity
