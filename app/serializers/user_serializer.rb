@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :bio, :avatar, :animes, :mangas
+  attributes :id, :username, :bio, :avatar, :animes, :mangas, :serializable_hash
 
   def serializable_hash(adapter_options = nil, options = {}, adapter_instance = self.class.serialization_adapter_instance)
     hash = super
