@@ -31,13 +31,18 @@ class UsersController < ApplicationController
     #     end
     # end
 
+    # def update
+    #     if @current_user.update!(user_params)
+    #         render json: user, status: :ok
+    #     else
+    #         logger.debug "*****test******"
+    #         render json: @current_user.errors, status: :unprocessable_entity
+    #     end
+    # end
+
     def update
-        if @current_user.update!(user_params)
-            render json: user, status: :ok
-        else
-            logger.debug "*****test******"
-            render json: @current_user.errors, status: :unprocessable_entity
-        end
+        @current_user.update!(user_params)
+        render json: user, status: :ok
     end
 
     private
