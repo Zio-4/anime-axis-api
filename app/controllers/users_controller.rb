@@ -41,8 +41,10 @@ class UsersController < ApplicationController
     # end
 
     def update
-        @current_user.update!(user_params)
-        render json: @current_user, status: :ok
+        if User.exists?(8)
+            @current_user.update!(user_params)
+            render json: @current_user, status: :ok
+        end
     end
 
     private
