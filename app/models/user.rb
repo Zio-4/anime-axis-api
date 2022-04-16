@@ -6,6 +6,6 @@ class User < ApplicationRecord
     has_many :mangas, through: :manga_lists
 
     validates :username, presence: true, confirmation: {case_sensitive: false}, uniqueness: true, length: {in: 6..30}
-    validates :password, presence: true, confirmation: true
+    # validates :password, presence: true, confirmation: true
 
 end
