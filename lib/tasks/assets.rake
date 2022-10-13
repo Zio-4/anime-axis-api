@@ -1,9 +1,6 @@
-namespace :assets do
-    desc 'prevent compiling of assets'
-    task stop_compile: [ 'skip_precompile', 'assets:precompile' ]
-  end
-
-  
-['assets:precompile'].each do |t|
-    Rake::Task[t].enhance ['skip_precompile']
+Rake::Task["assets:precompile"].clear
+   namespace :assets do
+     task 'precompile' do
+     puts "Not pre-compiling assets..."
+   end
 end
