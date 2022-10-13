@@ -5,5 +5,5 @@ namespace :assets do
 
   
 ['assets:precompile'].each do |t|
-    Rake::Task[t].enhance ['skip_precompile']
+    Rake::Task[t].enhance ['stop_compile']
 end
