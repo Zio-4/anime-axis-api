@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://anime-axis.herokuapp.com', 'http://localhost:4000', 'https://anime-axis.netlify.app/'
+    origins 'https://anime-axis.netlify.app', 'http://localhost:4000' 
 
     resource '*',
       headers: :any,
